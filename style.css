@@ -2,7 +2,15 @@
   box-sizing: border-box;
 }
 
+.container {
+  width: 800px;
+  margin: 0 auto;
+}
 
+
+/**
+ * nav
+ */
 #nav {
   background-color: #ff6600;
   width: 100%;
@@ -11,39 +19,18 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 100;
+  z-index: 100; /* z-index定義元素的層級，愈大的數字會放在愈上層，而視窗位於 0 的位置 */
 }
-
-#content {
-  /*border: 1px solid blue;*/
-  position: relative;
-  top: 78px
-  padding: 15px;
-}
-
-.container {
-  /*border: 1px solid #ccc;*/
-  width: 800px;
-  margin: 0 auto;
-}
-
-#content > .container > div {
-  padding: 78px 0;
-}
-
-#about, #my-work, #contact-me {
-  /*border: 1px solid yellow;*/
-}
-
 .menu {
   float: right;
 }
-.menu li{
-  width: 150px;
+.menu li { /* menu下所有li選起來 */
+  width: 120px;
   padding: 10px 0px;
 
   border: 1px solid #fff;
-  border-radius: 8px;
+  border-radius: 5px;
+  margin-bottom: -5px;
 
   list-style-type: none;
   text-align: center;
@@ -52,13 +39,12 @@
 
   display: inline-block;
 }
-
 a {
   display: block;
   color: #fff;
   text-decoration: none;
 }
-li:hover { /*游標移過時*/
+li:hover { /* 滑鼠移到時 */
   border: 1px solid #ff6600;
   background-color: #fff;
 }
@@ -67,13 +53,27 @@ li:hover a {
   font-weight: 800;
 }
 
+
+
+/**
+ * content
+ */
+#content {
+  position: relative;
+  top: 0px;
+  padding: 70px;
+}
+#content > .container > div {
+  padding: 70px 0;
+}
+hr.bar {
+  border: 2px solid #ff6600;
+  width: 80px;
+}
 h1 {
   text-align: center;
 }
-#about h1 {
-  margin-bottom: 0;
-  text-align: left;
-}
+
 
 /* about me */
 #my-avatar {
@@ -84,8 +84,9 @@ h1 {
   width: 300px;
 }
 
-h1 {
+#about h1 {
   margin-bottom: 0;
+  text-align: left;
 }
 h3 {
   margin: 0;
@@ -104,19 +105,15 @@ td {
 hr {
   border: 0.5px solid #eee;
 }
-hr.bar {
-  border: 2px solid #ff6600;
-  width: 80px;
-}
-
 
 /* my work */
-#my-work-gallery {
+#my-work {
   text-align: center;
 }
 .item {
-  position: relative;
   max-width: 30%;
+
+  position: relative; 
 
   display: inline-block;
   margin-bottom: 10px;
@@ -125,31 +122,29 @@ hr.bar {
   width: 100%;
 }
 .item-info {
-  /*border: 1px solid red;*/
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding: 25px 10px;
+
   background-color: rgba(255,255,255,.8);
 
   position: absolute;
   top: 0;
   left: 0;
 
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  padding: 25px 10px;
-
   opacity: 0;
 }
-.item-info:hover{
+.item-info:hover {
   opacity: 1;
 }
 
 
 /* contact me */
 #contact-me {
-  /*border: 1px solid green;*/
+
 }
 form.contact-form {
-  /*border: 1px solid red;*/
   width: 50%;
   margin: 0 auto;
 }
@@ -170,11 +165,11 @@ form.contact-form {
   border: none;
   border-radius: 3px;
   padding: 10px 15px;
-  cursor: pointer;
+  cursor: pointer; /* 改變滑鼠游標的形狀 */
 }
 .form-row button[type="submit"] {
   background-color: #5995da;
-  color: #ffffff;
+  color: #fff;
 }
 .form-row button:hover {
   background-color: #76aeed;
