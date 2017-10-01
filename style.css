@@ -14,7 +14,7 @@
 #nav {
   background-color: #ff6600;
   width: 100%;
-  border: 1px solid red;
+  border: 1px solid #ff6600;
 
   position: fixed;
   top: 0;
@@ -25,7 +25,7 @@
   float: right;
 }
 .menu li { /* menu下所有li選起來 */
-  width: 120px;
+  width: 150px;
   padding: 10px 0px;
 
   border: 1px solid #fff;
@@ -176,4 +176,79 @@ form.contact-form {
 }
 .form-row button:active {
   background-color: #407fc7;
+}
+
+
+/**
+ * RWD
+ */
+@media screen and (min-width: 768px) {
+  .menu-button,
+  .menu-button-checkbox {
+    display: none;
+  }
+}
+@media screen and (max-width: 767px) { /* 手機版 */
+  .container {
+    width: auto;
+  }
+
+  .menu-button {
+    float: right;
+    font-size: 25px;
+    line-height: 40px;
+    color: white;
+    background: transparent;
+    padding: 0 15px;
+    border: 0;
+  }
+  .menu-button-checkbox {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 55px;
+    height: 40px;
+
+    opacity: 0;
+  }
+  .menu-button-checkbox:checked ~ .menu {
+    display: block;
+  }
+  .menu {
+    margin-top: 0;
+    padding-left: 0;
+    position: fixed;
+    right: 0;
+    top: 42px;
+    width: 150px;
+    height: 100%;
+    background: red;
+
+    display: none;
+  }
+  .menu li {
+    border: 0;
+    border-radius: 0;
+  }
+
+  #content {
+    padding: 40px;
+  }
+
+  #my-avatar {
+    width: 100%;
+  }
+  #my-avatar img {
+    width: 250px;
+    display: block;
+    margin: 10px auto;
+  }
+
+  .item {
+    max-width: 100%;
+  }
+
+  form.contact-form {
+    width: 80%;
+  }
 }
